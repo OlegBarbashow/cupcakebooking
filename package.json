@@ -1,0 +1,26 @@
+{
+  "name": "keksobooking",
+  "version": "22.0.0",
+  "private": true,
+  "description": "Личный проект «Кексобукинг» от HTML Academy",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OlegBarbashow/cupcakebooking.git"
+  },
+  "bugs": {
+    "url": "https://github.com/htmlacademy-javascript/1537031-keksobooking-22/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "2.26.14",
+    "eslint": "7.18.0",
+    "eslint-config-htmlacademy": "2.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server \"build/\" --no-ui --files \"source/**/*.js\"",
+    "test": "eslint source/js/"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
