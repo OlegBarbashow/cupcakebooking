@@ -71,6 +71,8 @@ const createAddressData = () => {
   }
 }
 
+const getSimilarAddresses = () => {
+  return new Array(SIMILAR_ADDRESS_COUNT).fill(null).map(() => createAddressData());
+}
 
-let similarAddresses = new Array(SIMILAR_ADDRESS_COUNT).fill(null).map(() => createAddressData());
-console.log(similarAddresses);
+export {getSimilarAddresses};
