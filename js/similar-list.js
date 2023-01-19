@@ -125,4 +125,4 @@ similarRelated.forEach(({offer, author}) => {
 
 mapElement.append(similarRelatedFragment.firstChild);
 
-console.log(getSimilarAddresses());
+// console.log(getSimilarAddresses());
