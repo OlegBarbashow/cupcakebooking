@@ -1,4 +1,62 @@
+const setFormElementsEnabled = (elements) => {
+  elements.forEach(element => {
+    element.disabled = false;
+  });
+}
+
+const setFormsMapEnabled = () => {
+  const formAd = document.querySelector('.ad-form');
+  const inputsAd = formAd.querySelectorAll('input');
+  const selectsAd = formAd.querySelectorAll('select');
+  const textareasAd = formAd.querySelectorAll('textarea');
+  const buttonsAd = formAd.querySelectorAll('button');
+  const formFilters = document.querySelector('.map__filters');
+  const inputsFilters = formFilters.querySelectorAll('input');
+  const selectsFilters = formFilters.querySelectorAll('select');
+
+  formAd.classList.remove('ad-form--disabled');
+  setFormElementsEnabled(inputsAd);
+  setFormElementsEnabled(selectsAd);
+  setFormElementsEnabled(textareasAd);
+  setFormElementsEnabled(buttonsAd);
+
+  formFilters.classList.remove('ad-form--disabled');
+  setFormElementsEnabled(inputsFilters);
+  setFormElementsEnabled(selectsFilters);
+}
+
+
 const form = () => {
+  const formAd = document.querySelector('.ad-form');
+  const inputsAd = formAd.querySelectorAll('input');
+  const selectsAd = formAd.querySelectorAll('select');
+  const textareasAd = formAd.querySelectorAll('textarea');
+  const buttonsAd = formAd.querySelectorAll('button');
+  const formFilters = document.querySelector('.map__filters');
+  const inputsFilters = formFilters.querySelectorAll('input');
+  const selectsFilters = formFilters.querySelectorAll('select');
+
+  const setFormElementsDisable = (elements) => {
+    elements.forEach(element => {
+      element.disabled = true;
+    });
+  }
+
+
+
+  const setFormsMapDisabled = () => {
+    formAd.classList.add('ad-form--disabled');
+    setFormElementsDisable(inputsAd);
+    setFormElementsDisable(selectsAd);
+    setFormElementsDisable(textareasAd);
+    setFormElementsDisable(buttonsAd);
+
+    formFilters.classList.add('ad-form--disabled');
+    setFormElementsDisable(inputsFilters);
+    setFormElementsDisable(selectsFilters);
+  }
+
+
 
   const setMinimumPriceHousing = () => {
     const typeHousing = document.querySelector('#type');
@@ -47,8 +105,16 @@ const form = () => {
     });
   }
 
+  setFormsMapDisabled();
   setMinimumPriceHousing();
   setCheckinCheckoutTimeRelations();
 }
 
-export default form;
+const setCoordinates = ({lat, lng}) => {
+  const address = document.querySelector('#address');
+  lat = lat.toFixed(5);
+  lng = lng.toFixed(5);
+  address.value =  '{' + lat + '}, {' + lng + '}';
+}
+
+export {form, setCoordinates, setFormsMapEnabled};

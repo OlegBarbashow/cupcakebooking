@@ -1,13 +1,8 @@
-import {getSimilarAddresses} from './data.js';
+const realestatePopupCard = ({offer, author}) => {
+  const similarRelatedTemplate = document.querySelector('#card')
+    .content
+    .querySelector('.popup');
 
-const mapElement = document.querySelector('#map-canvas');
-const similarRelatedTemplate = document.querySelector('#card')
-  .content
-  .querySelector('.popup');
-const similarRelated = getSimilarAddresses();
-const similarRelatedFragment = document.createDocumentFragment();
-
-similarRelated.forEach(({offer, author}) => {
   const relatedElement = similarRelatedTemplate.cloneNode(true);
 
   if (offer.title) {
@@ -120,9 +115,7 @@ similarRelated.forEach(({offer, author}) => {
     relatedElement.querySelector('.popup__avatar').classList.add('visually-hidden');
   }
 
-  similarRelatedFragment.append(relatedElement);
-});
+  return relatedElement;
+};
 
-mapElement.append(similarRelatedFragment.firstChild);
-
-// console.log(getSimilarAddresses());
+export default realestatePopupCard;

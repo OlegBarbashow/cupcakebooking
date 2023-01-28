@@ -1,4 +1,6 @@
-import './similar-list.js';
-import form from './form.js';
+import {form} from './form.js';
+import map from './map.js';
+
 
 form();
+map();
