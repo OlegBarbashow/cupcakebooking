@@ -18,7 +18,7 @@ const map = () => {
 
   const mainPinIcon = L.icon(
     {
-      iconUrl: '../img/main-pin.svg',
+      iconUrl: './img/main-pin.svg',
       iconSize: [48, 48],
       iconAnchor: [8, 16],
     },
@@ -46,7 +46,7 @@ const map = () => {
     const {y, x} = point.location;
     const icon = L.icon(
       {
-        iconUrl: '../img/pin.svg',
+        iconUrl: './img/pin.svg',
         iconSize: [32, 32],
         iconAnchor: [16, 32],
       },
