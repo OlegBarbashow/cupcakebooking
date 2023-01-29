@@ -1,10 +1,11 @@
-import {setCoordinates, setFormsMapEnabled} from './form.js';
+import {setCoordinatesInput, setFormsMapEnabled} from './form.js';
 import {getSimilarAddresses} from './data.js';
 import realestatePopupCard from './realestatePopupCard.js';
 const map = () => {
   const map = L.map('map-canvas')
     .on('load', () => {
       setFormsMapEnabled();
+      setCoordinatesInput({lat:35.6895, lng:139.692});
     })
     .setView({
       lat: 35.6895,
@@ -36,7 +37,7 @@ const map = () => {
 
   mainPinMarker.addTo(map);
   mainPinMarker.on('moveend', (evt) => {
-    setCoordinates(evt.target.getLatLng());
+    setCoordinatesInput(evt.target.getLatLng());
   });
 
   const points = getSimilarAddresses();
